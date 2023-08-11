@@ -1,14 +1,17 @@
+.data
+    message db "Hello World!",0
+    messageLength equ $-message
+
 .code
-	mov eax, 0x4        ; write syscall
-    mov ebx, 0x1        ; stdout
-    mov ecx, message
-    mov edx, message-length
-    int 0x80
+    main proc
+	    mov eax, 4h        ; write syscall
+        mov ebx, 1h        ; stdout
+        mov ecx, OFFSET message
+        mov edx, messageLength
+        int 80h
 
-    mov eax, 0x1
-    mov ebx, 0
-    int 0x80
-
-.data:
-    message: db "Hello World!", 0xA
-    message-length equ $-message
+        mov eax, 1h
+        mov ebx, 0
+        int 80h
+    main endp
+    end
