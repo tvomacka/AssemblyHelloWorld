@@ -14,6 +14,9 @@ Simple testing project for assembly
  - Project properties: Linker->Advanced Entry Point="main"
 
 ## Using Command Line
+
+This is not tested yet!
+
  - Open "x64 Native Tools Command Prompt for VS 2022" windows, assemble and link the code
  - This step use ml64.exe, the MASM assembler, together with link options, to generate hello.exe:
 	```
