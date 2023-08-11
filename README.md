@@ -12,3 +12,10 @@ Simple testing project for assembly
  - Right click the .asm file and go to Properties, set the Item Type to Microsoft Macro Assembler
  - Project properties: Linker->System Enable Large Addresses=No
  - Project properties: Linker->Advanced Entry Point="main"
+
+## Using Command Line
+ - Open "x64 Native Tools Command Prompt for VS 2022" windows, assemble and link the code
+ - This step use ml64.exe, the MASM assembler, together with link options, to generate hello.exe:
+	```
+	ml64 hello.asm /link /subsystem:console /entry:main
+	```
