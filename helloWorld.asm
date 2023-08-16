@@ -1,5 +1,5 @@
 ; Assembly Hello World sample
-; x64 Windows
+; x64 Windows 10
 ; using VS2022 and MASM
 
 includelib ucrt.lib
