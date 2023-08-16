@@ -1,3 +1,7 @@
+; Assembly Hello World sample
+; x64 Windows
+; using VS2022 and MASM
+
 includelib ucrt.lib
 includelib legacy_stdio_definitions.lib
 includelib msvcrt.lib
