@@ -15,10 +15,9 @@ Simple testing project for assembly
 
 ## Using Command Line
 
-**I haven't tested this yet!**
-
- - Open "x64 Native Tools Command Prompt for VS 2022" windows, assemble and link the code
- - This step use ml64.exe, the MASM assembler, together with link options, to generate hello.exe:
+ - Open *x64 Native Tools Command Prompt for VS 2022*
+ - Note this is not the same as the *Developer Command Prompt for VS 2022* or *Developer Power Shell for VS 2022*!
+ - cd into the source directory and run the following command to generate helloWorld.exe
 	```
 	ml64 hello.asm /link /subsystem:console /entry:main
 	```
