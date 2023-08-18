@@ -13,7 +13,7 @@ Simple testing project for assembly
  - Project properties: Linker->System Enable Large Addresses=No
  - Project properties: Linker->Advanced Entry Point="main"
 
-## Using Command Line
+## [Windows 10] Using Command Line
 
  - Open *x64 Native Tools Command Prompt for VS 2022*
  - Note this is not the same as the *Developer Command Prompt for VS 2022* or *Developer Power Shell for VS 2022*!
