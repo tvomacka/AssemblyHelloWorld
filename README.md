@@ -19,5 +19,5 @@ Simple testing project for assembly
  - Note this is not the same as the *Developer Command Prompt for VS 2022* or *Developer Power Shell for VS 2022*!
  - cd into the source directory and run the following command to generate helloWorld.exe
 	```
-	ml64 hello.asm /link /subsystem:console /entry:main
+	ml64 helloWorld.asm /link /subsystem:console /entry:main
 	```
