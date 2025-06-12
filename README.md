@@ -36,6 +36,6 @@ ml64 hello1.asm /c /Zi
 link hello.obj kernel32.lib /subsystem:console /entry:main /debug
 ```
 
-### hello2.asm
+### barebones.asm
 
 MASM x64 "Hello World" via direct syscalls (no imports)
