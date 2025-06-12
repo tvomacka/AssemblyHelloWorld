@@ -2,13 +2,18 @@
 ; Assembles and links with:
 ; ml64 barebones.asm /link /entry:start /subsystem:console
 
+; === Define syscall numbers (adjust for your Windows version if needed) ===
+NtWriteFile       equ 3Ch  ; Syscall number for NtWriteFile (Win10 19041+)
+NtTerminateProcess equ 2Eh ; Syscall number for NtTerminateProcess
+NtStdoutHandle equ 07h ; Standard output handle (usually 07h)
+
 .code
 
 start proc
     ; Windows syscall numbers (valid for Windows 10.19041)
     ; These can change per Windows version!
-    mov     eax, 0x3C              ; NtWriteFile syscall number (Windows 10 19041)
-    mov     rcx, 0x0000000000000007 ; Handle to stdout (usually 0x7)
+    mov     eax, NtWriteFile              ; NtWriteFile syscall number (Windows 10 19041)
+    mov     rcx, NtStdoutHandle ; Handle to stdout (usually 0x7)
     lea     rdx, io_status_block
     lea     r8, hello_message
     mov     r9d, hello_length
@@ -16,7 +21,7 @@ start proc
     syscall
 
     ; Exit with status 0
-    mov     eax, 0x2E              ; NtTerminateProcess syscall (Windows 10 19041)
+    mov     eax, NtTerminateProcess              ; NtTerminateProcess syscall (Windows 10 19041)
     xor     rcx, rcx               ; Handle 0 = current process
     xor     rdx, rdx               ; Exit code = 0
     mov     r10, rcx
