@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="helloWorld.asm">
+    <MASM Include="clargs.asm">
       <Filter>Source Files</Filter>
     </MASM>
   </ItemGroup>
