@@ -51,3 +51,11 @@ Currently builds and runs, but outputs nothing, the problem is most probably wit
 ## clargs.asm
 
 Reads the command line arguments and writes them to the console output.
+
+# TODO:
+
+ - refine the clargs sample so that we essentially get the argc/argv structure known from C
+ - numeric parsing
+ - number output to console (int to str)
+ - command line argument parsing
+ 
