@@ -21,3 +21,21 @@ Simple testing project for assembly
 	```
 	ml64 helloWorld.asm /link /subsystem:console /entry:main
 	```
+
+# Getting Rid of Dependencies
+
+## hello1.asm
+
+Is a minimal Hello World in x64 MASM (no library includes), but needs to be linked against kernel32.lib during the link part of the build.
+
+```
+ml64 hello1.asm /c /Zi
+```
+
+```
+link hello.obj kernel32.lib /subsystem:console /entry:main /debug
+```
+
+### hello2.asm
+
+MASM x64 "Hello World" via direct syscalls (no imports)
