@@ -6,7 +6,7 @@ extern GetCommandLineA:proc
 extern ExitProcess:proc
 
 .data
-buffer dq 0
+bufferPtr dq 0
 bufferSize dq 0
 dummyWritten dq 0
 
@@ -15,10 +15,10 @@ main proc
     sub rsp, 28h                    ; shadow space
 
     call GetCommandLineA            ; returns LPSTR to full command line
-    mov buffer, rax                 ; save it somewhere if needed
+    mov bufferPtr, rax                 ; save it somewhere if needed
     
     ; Get length of command line
-    mov     rcx, buffer       ; argument goes in rcx
+    mov     rcx, bufferPtr       ; argument goes in rcx
     sub     rsp, 28h          ; shadow space (32 bytes) + 8-byte alignment padding
     call    strlo
     add     rsp, 28h          ; restore stack
@@ -30,7 +30,7 @@ main proc
 
     ; Save handle
     mov     rcx, rax                ; hConsoleOutput
-    mov     rdx, buffer             ; lpBuffer
+    mov     rdx, bufferPtr             ; lpBuffer
     movzx   r8d, byte ptr [bufferSize]         ; nNumberOfCharsToWrite
     lea     r9, dummyWritten        ; lpNumberOfCharsWritten
     sub     rsp, 20h                ; Allocate shadow space
