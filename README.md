@@ -38,4 +38,10 @@ link hello.obj kernel32.lib /subsystem:console /entry:main /debug
 
 ### barebones.asm
 
-MASM x64 "Hello World" via direct syscalls (no imports)
+MASM x64 "Hello World" via direct syscalls (no imports).
+
+```
+ml64 barebones.asm /link /entry:start /subsystem:console
+```
+
+Currently builds and runs, but outputs nothing, the problem is most probably with having incorrect stdout handle for the OS version. Will have to investigate.
