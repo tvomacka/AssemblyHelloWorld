@@ -1,37 +1,25 @@
-; hello.asm
-; Assemble with: ml64 hello.asm /link /subsystem:console /entry:main
+option casemap:none
+
+extern GetProcessHeap:proc
+extern HeapAlloc:proc
+extern ExitProcess:proc
 
 .data
-    helloMessage db "Hello, world!", 0Dh, 0Ah
-    helloLength  equ $ - helloMessage
-    dummyWritten dq 0
+allocSize dq 32	; Size of the memory to allocate (4 bytes for int + 28 bytes for string)
 
 .code
 main proc
-    sub     rsp, 28h                ; Shadow space
+	sub		rsp, 40h ; Allocate stack space for local variables
 
-    ; Get handle to stdout
-    mov     rcx, -11                ; STD_OUTPUT_HANDLE
-    call    GetStdHandle
+	call	GetProcessHeap ; Get the process heap handle
+	mov		rcx, rax ; Store the heap handle in rcx
+	mov		rdx, 0 ; Zero out rdx for the flags parameter
+	mov		r8, allocSize ; Size of the memory to allocate
+	call	HeapAlloc ; Allocate memory from the heap
 
-    ; Save handle
-    mov     rcx, rax                ; hConsoleOutput
-    lea     rdx, helloMessage       ; lpBuffer
-    mov     r8d, helloLength        ; nNumberOfCharsToWrite
-    lea     r9, dummyWritten        ; lpNumberOfCharsWritten
-    sub     rsp, 20h                ; Allocate shadow space
-    call    WriteConsoleA
-    add     rsp, 20h
-
-    ; Exit process
-    xor     ecx, ecx                ; uExitCode
-    call    ExitProcess
+	; Clean up and exit
+	add		rsp, 40h ; Deallocate stack space
+	xor		ecx, ecx ; Set exit code to 0
+	call	ExitProcess ; Exit the process
 main endp
-
-; Manually import the necessary Windows API functions
-; These are declared as extern and resolved during linking
-extern GetStdHandle:proc
-extern WriteConsoleA:proc
-extern ExitProcess:proc
-
 end

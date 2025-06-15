@@ -50,7 +50,9 @@ Currently builds and runs, but outputs nothing, the problem is most probably wit
 
 ## printNum.asm
 
-Outputs a number to console as a text.
+Outputs a number to console as a text, manually converting the number to a string.
+
+Includes memory allocation on heap for the converted string value.
 
 # Working with Command Line
 
