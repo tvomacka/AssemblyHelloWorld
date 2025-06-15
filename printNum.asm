@@ -36,7 +36,7 @@ main endp
 ; returns the number of characters written in rax
 convert proc
 	xor		rax, rax ; Clear rax for character count
-	
+	ret
 convert endp
 
 end
