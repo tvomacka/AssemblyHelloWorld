@@ -35,7 +35,14 @@ main endp
 ; rdx - pointer to the allocated memory for the string
 ; returns the number of characters written in rax
 convert proc
-	xor		rax, rax ; Clear rax for character count
+	mov		r8, rdx	; store the memory pointer
+	xor		r9, r9	; how many numbers have been written
+	xor		rdx, rdx
+	mov		rax, rcx	;rdx:rax are to be divided
+	mov		r10, 10	; divide by base 10
+
+	div		r10
+
 	ret
 convert endp
 
