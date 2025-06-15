@@ -4,6 +4,7 @@
 .data
     helloMessage db "Hello, world!", 0Dh, 0Ah
     helloLength  equ $ - helloMessage
+    dummyWritten dq 0
 
 .code
 main proc
@@ -27,7 +28,6 @@ main proc
     call    ExitProcess
 main endp
 
-dummyWritten dq 0
 
 ; Manually import the necessary Windows API functions
 ; These are declared as extern and resolved during linking
