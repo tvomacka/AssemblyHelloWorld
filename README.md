@@ -1,6 +1,5 @@
 # AssemblyHelloWorld
-Simple testing project for assembly
-
+Once, this was meant to be a simple testing project for assembly, but suddenly it grew to be a collection of various small learning samples. This includes working with command line, memory allocation, and various simple algorithms. See the TODOs to see what's planned next.
 
 [Microsoft Reference](https://learn.microsoft.com/en-us/cpp/assembler/masm/microsoft-macro-assembler-reference?view=msvc-170)
 
@@ -67,4 +66,6 @@ Reads the command line arguments and writes them to the console output.
  - number output to console (int to str)
  - command line argument parsing
  - learn about argument parsing, stack and instruction pointers
+ - learn about shellcode
+ - Rabin-Karp algorithm
  
