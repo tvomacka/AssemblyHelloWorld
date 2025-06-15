@@ -5,7 +5,7 @@ extern HeapAlloc:proc
 extern ExitProcess:proc
 
 .data
-allocSize dq 32	; Size of the memory to allocate (4 bytes for int + 28 bytes for string)
+allocSize dq 32	; Size of the memory to allocate
 num dq 2	; The number to convert to a string
 
 .code
@@ -52,10 +52,12 @@ Divide:
 	cmp		rax, 0
 	jne		Divide	; if there's more to divide, keep going
 
-	;otherwise, write the ending \0 and exit
+	; otherwise, write the ending \0 and exit
 	xor		dl, dl
 	mov		[r8+r9], dl
 	mov		rax, r9
+
+	; this might need checking if we are still in the bounds of the allocated memory
 
 	ret
 convert endp
