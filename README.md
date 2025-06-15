@@ -1,6 +1,8 @@
 # AssemblyHelloWorld
 Once, this was meant to be a simple testing project for assembly, but suddenly it grew to be a collection of various small learning samples. This includes working with command line, memory allocation, and various simple algorithms. See the TODOs to see what's planned next.
 
+_Disclaimer: This repo will probably stay in a very unorganized manner. It is not meant to have great (or any, for that matter) PR culture, tests, or fancy commit notations. It is here for one purpose - to learn assembly._
+
 [Microsoft Reference](https://learn.microsoft.com/en-us/cpp/assembler/masm/microsoft-macro-assembler-reference?view=msvc-170)
 
 
