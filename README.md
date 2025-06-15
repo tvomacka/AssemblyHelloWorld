@@ -46,6 +46,12 @@ ml64 barebones.asm /link /entry:start /subsystem:console
 
 Currently builds and runs, but outputs nothing, the problem is most probably with having incorrect stdout handle for the OS version. Will have to investigate.
 
+# I/O
+
+## printNum.asm
+
+Outputs a number to console as a text.
+
 # Working with Command Line
 
 ## clargs.asm
