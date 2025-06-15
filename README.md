@@ -66,6 +66,5 @@ Reads the command line arguments and writes them to the console output.
  - numeric parsing
  - number output to console (int to str)
  - command line argument parsing
- - learn about memory allocation
  - learn about argument parsing, stack and instruction pointers
  
