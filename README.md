@@ -51,7 +51,7 @@ Currently builds and runs, but outputs nothing, the problem is most probably wit
 
 ## printNum.asm
 
-Outputs a number to console as a text, manually converting the number to a string.
+Outputs a number to console as a text, manually converting the number to a string. Currently works only on positive integers. But should serve as PoC. The algorithm works by repeated division of the provided input by base (10, but could easily be modified to include other bases) and writing the modulo to the first memory index, shifting all of the previously written characters to the next memory location.
 
 Includes memory allocation on heap for the converted string value.
 
@@ -65,7 +65,7 @@ Reads the command line arguments and writes them to the console output.
 
  - refine the clargs sample so that we essentially get the argc/argv structure known from C
  - numeric parsing
- - number output to console (int to str)
+ - ~number output to console (int to str)~
  - command line argument parsing
  - learn about argument parsing, stack and instruction pointers
  - learn about shellcode
