@@ -65,9 +65,11 @@ Reads the command line arguments and writes them to the console output.
 
  - refine the clargs sample so that we essentially get the argc/argv structure known from C
  - numeric parsing
- - ~number output to console (int to str)~
  - command line argument parsing
+ - learn about referencing other files in .asm - how do I call proc defined in other .asm?
  - learn about argument parsing, stack and instruction pointers
  - learn about shellcode
  - Rabin-Karp algorithm
+
+ - ~number output to console (int to str)~
  
