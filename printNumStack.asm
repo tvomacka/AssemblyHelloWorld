@@ -33,36 +33,35 @@ main endp
 ; Convert a number to a string representation
 ; rcx - the number to convert
 ; rdx - pointer to the allocated memory for the string
-; returns the number of characters written in rax, without the trailing \0 (this might be wrong, check when outputing to console)
+; returns the number of characters written in rax, including the trailing \0 (this might be wrong, check when outputing to console)
 convert proc
 	mov		r8, rdx	; store the memory pointer
 	mov		r10, 10	; divide by base 10
 	
 	; start by writing the trailing \0
 	xor		dl, dl
-	mov		[r8], dl
-	
+	push	rdx
+		
 	mov		rax, rcx	; rdx:rax are to be divided
 Divide:
 	xor		rdx, rdx
 	div		r10
 
 	add		dl, '0'	; char representation of the resulting remainder
-	xor		r9, r9
-WriteResult:
-	mov		r11b, [r8+r9]	; save the original value 
-	mov		[r8+r9], dl	; write the resulting char to memory + offset
-	inc		r9	; increase the offset
-	mov		dl, r11b
-	cmp		r11b, 0
-	jne		WriteResult
-	mov		[r8+r9], r11b
-
+	push	rdx
 	cmp		rax, 0
 	jne		Divide	; if there's more to divide, keep going
 
-	; otherwise exit
-	mov		rax, r9
+	; otherwise write to memory
+	xor		r9, r9
+WriteResult:
+	pop		rdx
+	mov		[r8+r9], dl
+	inc		r9
+	cmp		dl, 0
+	jne		WriteResult
+
+	mov		rax, r9	; return the number of writen characters
 
 	; this might need checking if we are still in the bounds of the allocated memory
 
