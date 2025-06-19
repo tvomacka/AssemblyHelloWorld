@@ -74,7 +74,7 @@ Reads the command line arguments and writes them to the console output.
  - learn about argument parsing, stack and instruction pointers
  - learn about shellcode
  - Rabin-Karp algorithm
- - working with stack
-
+ 
+ - ~working with stack~
  - ~number output to console (int to str)~
  
