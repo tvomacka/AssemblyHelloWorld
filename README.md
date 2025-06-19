@@ -74,6 +74,7 @@ Reads the command line arguments and writes them to the console output.
  - learn about argument parsing, stack and instruction pointers
  - learn about shellcode
  - Rabin-Karp algorithm
+ - enhance the intToStr to allow using negative numbers
  
  - ~working with stack~
  - ~number output to console (int to str)~
