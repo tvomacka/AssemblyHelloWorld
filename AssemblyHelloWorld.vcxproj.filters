@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="printNum.asm">
+    <MASM Include="printNumStack.asm">
       <Filter>Source Files</Filter>
     </MASM>
   </ItemGroup>
