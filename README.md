@@ -53,6 +53,8 @@ Currently builds and runs, but outputs nothing, the problem is most probably wit
 
 Outputs a number to console as a text, manually converting the number to a string. Currently works only on positive integers. But should serve as PoC. The algorithm works by repeated division of the provided input by base (10, but could easily be modified to include other bases) and writing the modulo to the first memory index, shifting all of the previously written characters to the next memory location.
 
+The previous algorithm works, but maybe it should be rewritten using stack instead of pushing all of the previously written chars to the right before writing a new one.
+
 Includes memory allocation on heap for the converted string value.
 
 # Working with Command Line
@@ -70,6 +72,7 @@ Reads the command line arguments and writes them to the console output.
  - learn about argument parsing, stack and instruction pointers
  - learn about shellcode
  - Rabin-Karp algorithm
+ - working with stack
 
  - ~number output to console (int to str)~
  
