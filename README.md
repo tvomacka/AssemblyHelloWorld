@@ -81,6 +81,14 @@ link printNumStack.obj kernel32.lib /subsystem:console /entry:main /debug
 
 Reads the command line arguments and writes them to the console output.
 
+```
+ml64 clargs.asm /c /Zi
+```
+
+```
+link clargs.obj kernel32.lib /subsystem:console /entry:main /debug
+```
+
 # TODO:
 
  - refine the clargs sample so that we essentially get the argc/argv structure known from C
