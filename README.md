@@ -55,9 +55,25 @@ Outputs a number to console as a text, manually converting the number to a strin
 
 Includes memory allocation on heap for the converted string value.
 
+```
+ml64 printNum.asm /c /Zi
+```
+
+```
+link printNum.obj kernel32.lib /subsystem:console /entry:main /debug
+```
+
 ## printNumStack.asm
 
 The algorithm in _printNum.asm_ works, but maybe it should be rewritten using stack instead of pushing all of the previously written chars to the right before writing a new one. And this is what this file does.
+
+```
+ml64 printNumStack.asm /c /Zi
+```
+
+```
+link printNumStack.obj kernel32.lib /subsystem:console /entry:main /debug
+```
 
 # Working with Command Line
 
